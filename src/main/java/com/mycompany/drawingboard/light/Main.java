@@ -16,10 +16,10 @@ import org.glassfish.tyrus.server.TyrusServerContainer;
  *
  */
 public class Main {
-    public static final Optional<String> host = Optional.ofNullable(System.getenv("HOSTNAME"));
+    public static final Optional<String> host = Optional.ofNullable(System.getenv("HOST"));
     public static final Optional<String> port = Optional.ofNullable(System.getenv("PORT"));
     // Base URI the Grizzly HTTP server will listen on
-    public static final String BASE_URI = "http://" + host.orElse("localhost") 
+    public static final String BASE_URI = "http://" + host.orElse("0.0.0.0") 
                                           + ":" + port.orElse("8888") + "/api/";
 
     /**
